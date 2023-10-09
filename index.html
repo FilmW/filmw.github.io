@@ -4,171 +4,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>35mm film | oli.cx</title>
+    <title>Motion Picture film for Stills - Flare35</title>
     <meta name="robots" content="noindex">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/flickity.css" media="screen">
     <link rel="stylesheet" href="/assets/style.css">
+    <!--<script defer src="https://js.stripe.com/v3/"></script>-->
+    <script src="/assets/simpleParallax.js"></script>
+    <!--<script defer src="/assets/flickity.js"></script>-->
+    <script defer src="/assets/index.js"></script>
 </head>
 
 <body>
-    <header>
-        <a href="/" class="logo">film.oli.cx</a>
-        <h1>Motion Picture Film. <strong>For Stills.</strong></h1>
+    <header class="fullscreen composite">
+        <div class="background">
+            <img src="./images/girl_crop.jpg" class="parallax_down background_asset">
+        </div>
+        <div class="foreground">
+            <a href="/" class="logo">FLARE<span class="number35">35</span></a>
+            <h1>Motion Picture Film. <strong>For Stills.</strong></h1>
+        </div>
     </header>
     <main>
-        <section>
-            <h2>Bulk Loaded Films</h2>
-            <div class="items" id="films">
-                <a data-id="vision3_50d" class="film">
-                    <div class="image">
-                        <img src="/images/250D.jpg" alt="Kodak Vision3 250D">
+
+        <nav class="hidden">
+            <a href="#" class="logo">FLARE35</a>
+            <div class="spacer"></div>
+            <a href="#features">FEATURES</a>
+            <a href="#processing">PROCESSING</a>
+            <a href="#gallery">GALLERY</a>
+            <a href="#order">ORDER</a>
+        </nav>
+
+        <section class="smaller bi margintop" id="features">
+            <div>
+                <h2>CAPTURE EMOTIONS</h2>
+                <p>Pictures feel natural but powerful thanks to the excellent color science of Motion Picture film.</p>
+            </div>
+            <div>
+                <img src="/images/lomography/amp_p.jpg" alt="">
+                <span>Author: amp_p</span>
+            </div>
+        </section>
+
+        <section class="smaller bi margintop marginbottom">
+            <div>
+                <img src="/images/lomography/stefankante.jpg" alt="">
+                <span>Author: stefankante</span>
+            </div>
+            <div>
+                <h2>ENJOY DETAILS</h2>
+                <p>Ultra-fine grain and the Remjet anti-halation layer enhance the fineness of your photos.</p>
+            </div>
+        </section>
+
+        <section class="smaller bi marginbottom">
+            <div>
+                <h2>EXPOSE FREELY</h2>
+                <p>16 stops of dynamic range, that's heaps of exposure latitude for your shots.</p>
+            </div>
+            <div>
+                <img src="/images/lomography/123nk_2.jpg" alt="">
+                <span>Author: 123nk</span>
+            </div>
+        </section>
+
+        <section class="nomargin">
+            <div class="vertical_spacer composite">
+                <div class="background">
+                    <img src="./images/lomography/amp_puttipong_1.jpg" class="parallax_down" >
+                </div>
+
+            </div>
+        </section>
+
+        <section class="bi marginbottom margintop" id="processing">
+            <div>
+                <img src="/images/lab.jpg" class="parallax_down" alt="Lab">
+            </div>
+            <div class="flexcolumn">
+                <h2>PROCESSING</h2>
+                <p>Our specialists are ready to process and scan your film. Push-pulling is also an option.</p>
+                <ul>
+                    <li>ECN-2 Processing</li>
+                    <li>B&W Cross-processing</li>
+                    <li>Scanning</li>
+                </ul>
+                <div class="verticalspacer"></div>
+                <div>
+                    <a href="/contact.html" class="button">SEND US FILM</a>
+                    <a href="/processing.html" class="button">OTHER LABS AND HOME PROCESSING</a>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section class="gallery margintop marginbottom" id="gallery">
+            <div class="rows_span2">
+                <img src="/images/lomography/vanc.jpg" alt="">
+                <span>Author: vanc</span>
+            </div>
+            <div>
+                <img src="/images/lomography/alcesalces.jpg" class="" alt="">
+                <span>Author: alcesalces</span>
+            </div>
+            <div class="columns_span2">
+                <img src="/images/lomography/fhil68_2.jpg" alt="">
+                <span>Author: fhil68</span>
+            </div>
+            <div class="columns_span2">
+                <img src="/images/lomography/aciano_2.jpg" alt="">
+                <span>Author: aciano</span>
+            </div>
+            <div>
+                <img src="/images/lomography/123nk.jpg" class="" alt="">
+                <span>Author: 123nk</span>
+            </div>
+
+        </section>
+
+
+
+        <section class="center marginbottom margintop" id="order">
+            <h2>OUR FILMS</h2>
+            <div id="hovereffect">
+                <div id="cards">
+
+                    <div class="card hoverelem">
+                      <div class="card-content hoverelem-content">
+                        <div class="card-image">
+                            <img src="./images/flare250.png">
+                        </div>
+                        <div class="card-info">
+    
+                          <h3>50D</h3>
+                          <!--
+                          <span class="availability">Soon</span>
+                          <div class="product_menu">
+                            <div class="price">10€</div>
+                            <button class="plus">+</button>
+                            <input type="text" pattern="^([0-9][0-9]?|)$" class="amount" value="0" required >
+                            <button class="minus">-</button>
+                          </div>
+                          -->
+                        </div>
+                      </div>
                     </div>
-                    <div class="text">
-                        <h4>Vision3 <strong>50D</strong></h4>
-                        <span class="status">
-                            <span class="un">Out of stock</span>
-                            <span>10€</span>
-                        </span>
+                    <div class="card hoverelem">
+                      <div class="card-content hoverelem-content">
+                        <div class="card-image">
+                            <img src="./images/flare250.png">
+                        </div>
+                        <div class="card-info">
+                        
+                          <h3>200T</h3>
+                          <!--
+                          <span class="availability">Soon</span>
+                          <div class="product_menu">
+                            <div class="price">10€</div>
+                            <button class="plus">+</button>
+                            <input type="text" pattern="^([0-9][0-9]?|)$" class="amount" value="0" required >
+                            <button class="minus">-</button>
+                          </div>
+                          -->
+                        </div>  
+                      </div>
                     </div>
-                </a>
-                <a data-id="vision3_200t" class="film">
-                    <div class="image">
-                        <img src="/images/250D.jpg" alt="Kodak Vision3 250D">
+                    <div class="card hoverelem">
+                      <div class="card-content hoverelem-content">
+                        <div class="card-image">
+                            <img src="./images/flare250.png">
+                        </div>
+                        <div class="card-info">
+                        
+                          <h3>250D</h3>
+                          <!--
+                          <span class="availability">Soon</span>
+                          <div class="product_menu">
+                            <div class="price">10€</div>
+                            <button class="plus">+</button>
+                            <input type="text" pattern="^([0-9][0-9]?|)$" class="amount" value="0" required >
+                            <button class="minus">-</button>
+                          </div>
+                          -->
+                        </div>
+                      </div>
                     </div>
-                    <div class="text">
-                        <h4>Vision3 <strong>200T</strong></h4>
-                        <span class="status">
-                            <span class="un">Out of stock</span>
-                            <span>10€</span>
-                        </span>
+                    <div class="card hoverelem">
+                      <div class="card-content hoverelem-content">
+                        <div class="card-image">
+                            <img src="./images/flare250.png">
+                        </div>
+                        <div class="card-info">
+                          <h3>500T</h3>
+                          <!--
+                          <span class="availability">Soon</span>
+                          <div class="product_menu">
+                            <div class="price">10€</div>
+                            <button class="plus">+</button>
+                            <input type="text" pattern="^([0-9][0-9]?|)$" class="amount" value="0" required >
+                            <button class="minus">-</button>
+                          </div>
+                          -->
+                        </div>
+                      </div>
                     </div>
-                </a>
-                <a data-id="vision3_250d" class="film">
-                    <div class="image">
-                        <img src="/images/250D.jpg" alt="Kodak Vision3 250D">
-                    </div>
-                    <div class="text">
-                        <h4>Vision3 <strong>250D</strong></h4>
-                        <span class="status">
-                            <span class="instock">In stock</span>
-                            <span>10€</span>
-                        </span>
-                    </div>
-                </a>
-                <a data-id="vision3_500t" class="film">
-                    <div class="image">
-                        <img src="/images/250D.jpg" alt="Kodak Vision3 250D">
-                    </div>
-                    <div class="text">
-                        <h4>Vision3 <strong>500T</strong></h4>
-                        <span class="status">
-                            <span class="instock">In stock</span>
-                            <span>10€</span>
-                        </span>
-                    </div>
-                </a>
-                <a data-id="ektachrome_100d" class="film">
-                    <div class="image">
-                        <img src="/images/250D.jpg" alt="Kodak Vision3 250D">
-                    </div>
-                    <div class="text">
-                        <h4>Ektachrome <strong>E100</strong></h4>
-                        <span class="status">
-                            <span class="un">Out of stock</span>
-                            <span>17€</span>
-                        </span>
-                    </div>
-                </a>
+                    
+                  </div>
+
+                  <!--
+    
+                  <button disabled id="checkout" class="hoverelem checkout-button">
+                    <span class="hoverelem-content">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m480-560-56-56 63-64H320v-80h167l-64-64 57-56 160 160-160 160ZM280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM40-800v-80h131l170 360h280l156-280h91L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68.5-39t-1.5-79l54-98-144-304H40Z"/></svg>
+                      Checkout
+                    </span>
+                  </button>
+
+                  -->
             </div>
             
         </section>
 
-        <section id="details" class="hidden smaller">
-            <h2 id="details_name">...</h2>
-            <p id="details_description">...</p>
-        </section>
+        <!--
 
-
-        <section class="smaller">
-            <h2>Processing as Color Negative</h2>
-            <p>
-                Vision3 films are intended to be processed in ECN-2,
-                which is similar to the C-41 process but involves removal of so-called
-                Remjet layer, which is present of all Vision3 films. The Remjet layer is
-                meant to mechanically protect film as it moves through a motion picture
-                camera, 24 frames a second. It is also an anti-halation layer minimizing
-                reflection of light within the film itself.
-            </p>
-            <p>
-                <h3>Labs processing Motion Picture films</h3>
-                You can send your Vision3 films to one of
-                <a href="https://analogamsterdam.com/labs/" target="_blank">
-                many labs around the world
-                </a> that offer ECN-2 processing. In central Europe, consider these labs:
-                <ul>
-                    <li>Czechia - <a href="https://www.filmlabzlin.cz/en/services/classical-laboratory/" target="_blank">Film Lab Zlín</a> [ECN-2] (6.4€/pc + 10.2€ fee)</li>
-                    <li>Czechia - <a href="https://www.filmstore.cz/vyvolani-procesem-ecn-2/" target="_blank">Filmstore</a> [ECN-2] (~8.5€/pc)</li>
-                    <li>Slovakia - <a href="https://www.filmlabak.sk/" target="_blank">Filmlabak</a> [C-41 cross] (8€/pc)</li>
-                    <li>Hungary - <a href="https://cafeanalog.hu/fotolabor/film-kidolgozas" target="_blank">Café Analog</a> [ECN-2] (~5.5€/pc)</li>
-                    <li>Poland - <a href="https://matifoto.pl/" target="_blank">Mati Foto</a> [ECN-2] (~5.6€/pc)</li>
-
-                </ul>
-            </p>
-            <p>
-                <h3>Home processing</h3>
-                For processing at home, consider the <a href="https://cinestillfilm.com/products/cs2-cine-simplified-ecn-2-bath-kit-low-contrast-motion-picture-color-negatives-for-ecp-scanning?variant=32487168344138" target="_blank">Cinestill Cs2 kit</a>, which
-                simplifies the ECN-2 process into just two bathes. <br>
-                <i>Note: Sensiometric tests have shown the Cn2 developer (present in the Cs2 kit) to be weaker
-                    than advertised. While it produces great results, we suggest pushing all
-                    films 1 stop to compensate the weakness of this developer and achieve results
-                    indistinguishable from ECN-2 processed films. This is not an issue with the films, but the
-                    Cinestill Cn2 developer specifically.
-                </i>
-            </p>
-        </section>
-
-        <section class="smaller">
-            <h2>Processing as Black & White</h2>
-            <p>
-                Vision3 films can be processed in black & white chemistry.
-                For 250D, use times intended for ISO 200 T-grain films and for 500T,
-                use times intended for ISO 400 T-grain films.
-                If you plan to reuse your chemicals, the Remjet layer should be
-                removed <b>prior</b> to processing.
-                To remove Remjet, agitate the film in a 10% Sodium Bicarbonate solution
-                for 3 minutes, then keep rinsing until water comes out clear.  
-            </p>
-        </section>
-
-        <section class="smaller">
-            <h2>FAQ</h2>
-            <p style="text-align: center;">
-                <span>
-                    <strong>How do I order film?</strong> <br>
-                    <span>Send us an email to film(at)oli.cx, we will respond as soon as possible.<br><i>You can also purchase our films on Ebay. They are, hovewer, more expensive there due to Ebay fees.</i></span><br><br>
-                </span>
-                <span>
-                    <strong>How much is shipping?</strong> <br>
-                    <span>Tracked international shipping with delivery within 5-14 days is 7€.</span><br><br>
-                </span>
-                <span>
-                    <strong>How many exposures can I take with your films?</strong> <br>
-                    <span>36 exposures each.</span><br><br>
-                </span>
-                <span>
-                    <strong>Can you process my films?</strong> <br>
-                    <span>We can process your films, either as color negatives or as black & white. We also offer 6K camera scanning. Contact us for further information.</span><br><br>
-                </span>
-            </p>
-        </section>
-
-
-        <section class="ratings">
+        <section class="ratings marginbottom">
             <h2>Ratings</h2>
             <div id="ratings" >
                 <div class="rating">
@@ -194,13 +259,33 @@
             </div>
         </section>
 
+        -->
+
+        <section class="nomargin">
+            <div class="vertical_spacer composite">
+                <div class="background">
+                    <img src="./images/lomography/jjjjulian_2.jpg" class="parallax_up" >
+                </div>
+
+            </div>
+        </section>
+
     </main>
     <footer>
-        <span>films.oli.cx</span> <br>
-        &copy; oli.cx, 2023
+        <div class="logo">
+            <a href="#">FLARE35</a>
+            <span>ANALOGUE. REDEFINED.</span>
+        </div>
+        <div class="address">
+            <img src="/icons/location.svg" alt="Location" class="icon"> Nitra, Slovak Republic
+        </div>
+        <div class="links">
+            <a href="/faq.html">FAQ</a>
+            <a href="/contact.html">CONTACT</a>
+            <a>&copy; 2023</a>
+        </div>
     </footer>
-    <script src="/assets/flickity.js"></script>
-    <script src="/assets/app.js"></script>
+    
 </body>
 
 </html>
