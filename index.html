@@ -23,22 +23,31 @@
 <body>
     <header class="fullscreen composite">
         <div class="background">
-            <img src="./images/girl_crop.jpg" class="parallax_down background_asset">
+            <picture>
+                <source media="(max-width: 700px)" srcset="/images/girl_mobile.jpg">
+                <img src="/images/girl_crop.jpg" alt="Taking a photo on film" class="parallax_down">
+            </picture>
         </div>
-        <h1 class="foreground">
+        <h1 class="foreground" style="margin-block: 0;">
             <a href="/" class="logo">FLARE<span class="number35">35</span></a>
-            <span>Motion Picture Film. <strong>For Stills.</strong></span>
+            <span style="text-transform: none;">Motion Picture Film. <strong>For Stills.</strong></span>
         </h1>
     </header>
     <main>
 
         <nav class="hidden">
-            <a href="#" class="logo">FLARE35</a>
+            <a href="#" class="logo">FLARE<span class="number35">35</span></a>
             <div class="spacer"></div>
-            <a href="#features">FEATURES</a>
-            <a href="#processing">PROCESSING</a>
-            <a href="#gallery">GALLERY</a>
-            <a href="#order">ORDER</a>
+            <input type="checkbox" name="toggle" id="toggle">
+            <label class="menu" for="toggle">
+            </label>
+            <div class="links">
+                <div class="spacer"></div>
+                <a href="#features">FEATURES</a>
+                <a href="#processing">PROCESSING</a>
+                <a href="#gallery">GALLERY</a>
+                <a href="#order">ORDER</a>
+            </div>
         </nav>
 
         <section class="smaller bi margintop" id="features">
@@ -111,8 +120,8 @@
                 <span>Author: vanc</span>
             </div>
             <div>
-                <img src="/images/lomography/alcesalces.jpg" class="" alt="">
-                <span>Author: alcesalces</span>
+                <img src="/images/lomography/jonathansbean.jpg" class="" alt="">
+                <span>Author: jonathansbean</span>
             </div>
             <div class="columns_span2">
                 <img src="/images/lomography/fhil68_2.jpg" alt="">
@@ -132,7 +141,7 @@
 
 
         <section class="center marginbottom margintop" id="order">
-            <h2>OUR FILMS</h2>
+            <h2>CHOOSE ONE. OR ALL.</h2>
             <div id="hovereffect">
                 <div id="cards">
 
@@ -280,7 +289,7 @@
             <span>ANALOGUE. REDEFINED.</span>
         </div>
         <div class="address">
-            <img src="/icons/location.svg" alt="Location" class="icon"> Nitra, Slovak Republic
+            <img src="/assets/icons/location.svg" alt="Location" class="icon"> Nitra, Slovak Republic
         </div>
         <div class="links">
             <a href="/faq.html">FAQ</a>

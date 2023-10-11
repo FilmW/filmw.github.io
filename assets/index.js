@@ -110,3 +110,14 @@ function scrollObserver() {
 }
 
 window.addEventListener("scroll", scrollObserver);
+
+// Close after clicking link
+
+const links = document.querySelectorAll("nav > .links > a");
+const toggle = document.querySelector("#toggle");
+
+links.forEach(link => {
+  link.addEventListener("click", e => {
+    toggle.checked = false;
+  })
+});
