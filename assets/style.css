@@ -184,7 +184,7 @@ a {
 .logo {
     font-weight: 500;
     & > .number35 {
-        font-weight: 200;
+        /*font-weight: 200;*/
     }
 }
 
@@ -263,6 +263,9 @@ header {
 }
 
 .composite {
+
+    position: relative;
+    
     & > .background {
         width: 100%;
         height: 100%;
@@ -286,9 +289,6 @@ header {
 
     & > .foreground {
 
-        justify-content: center;
-
-
         position: absolute;
         width: 100%;
         height: 100%;
@@ -298,6 +298,9 @@ header {
 
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+
         
     }
 }
@@ -510,6 +513,14 @@ nav {
 
 section {
 
+    & h2 {
+        margin-bottom: 1rem;
+    }
+
+    & p {
+        margin-top: 0rem;
+    }
+
     scroll-margin-top: 100px;
 
     &:not(.nomargin) {
@@ -517,11 +528,11 @@ section {
     }
 
     &.margintop {
-        margin-top: 5rem;
+        margin-top: 7rem;
     }
 
     &.marginbottom {
-        margin-bottom: 5rem;
+        margin-bottom: 7rem;
     }
 
     &.center {
@@ -531,37 +542,6 @@ section {
         justify-content: center;
     }
 
-    &.gallery {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        gap: 1rem;
-
-        & > div {
-
-            display: flex;
-            flex-direction: column;
-
-            &.columns_span2 {
-                grid-column: span 2;
-            }
-    
-            &.rows_span2 {
-                grid-row: span 2;
-    
-            }
-
-            & > img, & >.simpleParallax {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-    
-
-            }
-        } 
-
-        
-    }
 }
 
 @keyframes appear {
@@ -571,6 +551,44 @@ section {
     100% {
         opacity: 1;
     }
+}
+
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+
+    @media(max-width: 600px) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    & > div {
+
+        display: flex;
+        flex-direction: column;
+
+        &.columns_span2 {
+            grid-column: span 2;
+        }
+
+        &.rows_span2 {
+            grid-row: span 2;
+
+        }
+
+        & > img, & >.simpleParallax {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+
+        }
+    } 
+
+    
 }
 
 
@@ -599,7 +617,7 @@ section {
 footer {
     border-top: 2px solid currentColor;
     text-align: center;
-    padding: 2rem 0;
+    padding: 4rem 0;
     display: flex;
     gap: 1rem;
     flex-direction: column;
@@ -711,7 +729,8 @@ section.smaller {
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
     gap: 1rem;  
 
-    margin-top: 2rem;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
 
 }
 
@@ -762,7 +781,7 @@ section.smaller {
         width: 100%;
         background: radial-gradient(
           600px circle at var(--mouse-x) var(--mouse-y), 
-          rgba(255, 255, 255, 0.4),
+          rgba(255,255,255,.3),
           transparent 40%
         );
         z-index: 1;
