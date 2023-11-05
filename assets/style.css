@@ -720,6 +720,10 @@ section.smaller {
 .inverted {
     background-color: var(--primary);
     color: var(--background);
+
+    & a {
+        color: var(--background);
+    }
 }
 
 .text_center {
