@@ -635,6 +635,7 @@ footer {
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-wrap: wrap;
         gap: 1rem;
 
         & > a {
@@ -741,11 +742,20 @@ section.smaller {
 
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 1rem;  
 
     margin-top: 4rem;
     margin-bottom: 3rem;
+
+    @media(max-width: 1100px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media(max-width: 600px) {
+        grid-template-columns: 1fr;
+    }
+
 
 }
 
@@ -830,6 +840,11 @@ input, button, textarea {
     height: 5rem;
     margin-top: 2rem;
 
+    @media(max-width: 600px) {
+        width: 100%;
+    }
+
+
     & > span {
         display: flex;
         align-items: center;
@@ -845,7 +860,14 @@ input, button, textarea {
   
   
   
-  /* -- ↓ ↓ ↓ extra card content styles ↓ ↓ ↓ -- */
+.error {
+    color: rgb(255, 119, 70);
+    margin-top: 0.5rem;
+}
+
+.hidden {
+    display: none;
+}
   
 
 .card-image {
@@ -880,6 +902,10 @@ input, button, textarea {
         width: 100%;
         text-align: end;
         color: lime;
+
+        &.soon {
+            color: orange;
+        }
     }
 
     & > .product_menu {
@@ -887,21 +913,34 @@ input, button, textarea {
         display: flex;
         align-items: center;
 
+        margin-top: 0.5rem;
+        padding-top: 0.5rem;
         border-top: 1px solid currentColor;
 
-        & > .price {
-            border-right: 1px solid --background;
-            width: 100%;
+        &[disabled] {
 
+        }
+
+        & > .price {
+            margin-right: auto;
         }
 
         & > .amount {
             border: none;
             width: 2em;
+            text-align: center;
         }
 
         & > button.plus, & > button.minus {
             border: none;
+            border-radius: 40px;
+            font-size: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 3rem;
+            height: 3rem;
+            padding: 0.1rem;
         }
     }
 

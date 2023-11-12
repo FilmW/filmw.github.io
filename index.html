@@ -7,9 +7,9 @@
     <title>Motion Picture film for Stills - Flare35</title>
     <link rel="stylesheet" href="/assets/flickity.css" media="screen">
     <link rel="stylesheet" href="/assets/style.css">
-    <!--<script defer src="https://js.stripe.com/v3/"></script>-->
     <script src="/assets/simpleParallax.js"></script>
     <script defer src="/assets/index.js"></script>
+    <meta name="description" content="Made with Kodak Vision3 50D, 200T, 250D and 500T">
 </head>
 
 <body>
@@ -145,7 +145,7 @@
             <div id="hovereffect">
                 <div id="cards">
 
-                    <div class="card hoverelem">
+                    <div class="card hoverelem product" data-productid="50D">
                       <div class="card-content hoverelem-content">
                         <div class="card-image">
                             <img src="./images/films/50.png">
@@ -153,19 +153,19 @@
                         <div class="card-info">
     
                             <h3><span class="logo">FLARE<span class="number35">35</span></span> 50</h3>
-                            <!--
-                          <span class="availability">Soon</span>
+                            
+                          <span class="availability">Last 3</span>
                           <div class="product_menu">
                             <div class="price">10€</div>
                             <button class="plus">+</button>
-                            <input type="text" pattern="^([0-9][0-9]?|)$" class="amount" value="0" required >
+                            <div class="amount">0</div>
                             <button class="minus">-</button>
                           </div>
-                          -->
+                          
                         </div>
                       </div>
                     </div>
-                    <div class="card hoverelem">
+                    <div class="card hoverelem product" data-productid="200T">
                       <div class="card-content hoverelem-content">
                         <div class="card-image">
                             <img src="./images/films/200.png">
@@ -173,19 +173,19 @@
                         <div class="card-info">
                         
                             <h3><span class="logo">FLARE<span class="number35">35</span></span> 200</h3>
-                            <!--
-                          <span class="availability">Soon</span>
+                            
+                          <span class="availability">In stock</span>
                           <div class="product_menu">
                             <div class="price">10€</div>
                             <button class="plus">+</button>
-                            <input type="text" pattern="^([0-9][0-9]?|)$" class="amount" value="0" required >
+                            <div class="amount">0</div>
                             <button class="minus">-</button>
                           </div>
-                          -->
+                          
                         </div>  
                       </div>
                     </div>
-                    <div class="card hoverelem">
+                    <div class="card hoverelem product" data-productid="250D">
                       <div class="card-content hoverelem-content">
                         <div class="card-image">
                             <img src="./images/films/250.png">
@@ -193,50 +193,53 @@
                         <div class="card-info">
                         
                             <h3><span class="logo">FLARE<span class="number35">35</span></span> 250</h3>
-                            <!--
-                          <span class="availability">Soon</span>
+                            
+                          <span class="availability soon">Out of stock</span>
                           <div class="product_menu">
                             <div class="price">10€</div>
                             <button class="plus">+</button>
-                            <input type="text" pattern="^([0-9][0-9]?|)$" class="amount" value="0" required >
+                            <div class="amount">0</div>
                             <button class="minus">-</button>
                           </div>
-                          -->
+                        
                         </div>
                       </div>
                     </div>
-                    <div class="card hoverelem">
+                    <div class="card hoverelem product" data-productid="500T">
                       <div class="card-content hoverelem-content">
                         <div class="card-image">
                             <img src="./images/films/500.png">
                         </div>
                         <div class="card-info">
                           <h3><span class="logo">FLARE<span class="number35">35</span></span> 500</h3>
-                          <!--
-                          <span class="availability">Soon</span>
-                          <div class="product_menu">
+                          
+                          <span class="availability soon">Out of stock</span>
+                          <div class="product_menu" disabled>
                             <div class="price">10€</div>
                             <button class="plus">+</button>
-                            <input type="text" pattern="^([0-9][0-9]?|)$" class="amount" value="0" required >
+                            <div class="amount">0</div>
                             <button class="minus">-</button>
                           </div>
-                          -->
+                          
                         </div>
                       </div>
                     </div>
                     
                   </div>
 
-                  <!--
+                  
     
                   <a href="#cards" id="checkout" class="hoverelem checkout-button">
                     <span class="hoverelem-content">
                       <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m480-560-56-56 63-64H320v-80h167l-64-64 57-56 160 160-160 160ZM280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM40-800v-80h131l170 360h280l156-280h91L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68.5-39t-1.5-79l54-98-144-304H40Z"/></svg>
-                      Order
+                      Checkout
                     </span>
                   </a>
 
-                  -->
+                  <span id="checkout_error" class="error hidden">Err</span>
+
+
+                  
 
                   
             </div>

@@ -1,68 +1,3 @@
-/*
-
-// STRIPE INTEGRATION
-
-let stripe = Stripe('pk_test_51Nto2BDRoA0SgYmiS2hVRGer44W86yXPrlf4B38qiaqPAKoNrCDwom2dLZOOKqcqOKqcVUVj5qSIBIiZF6LESo4q008IuRFOEt')
-
-const payButton = document.querySelector("#checkout");
-
-let products = [
-  {
-    name: "OLIFILM 50D",
-    price:  "price_1Ntr4qDRoA0SgYmiuVcx3R8y"
-  },
-  {
-    name: "OLIFILM 200T",
-    price:  "price_1Ntr52DRoA0SgYmiS6ZSJQ9h"
-  },
-  {
-    name: "OLIFILM 250D",
-    price:  "price_1Ntr5TDRoA0SgYmiuxS7S6qp"
-  },
-  {
-    name: "OLIFILM 500T",
-    price:  "price_1Ntr5GDRoA0SgYmiz2KWOa1l"
-  },
-]
-
-let shoppingCart = []
-
-payButton.addEventListener("click", e => {
-  const {error} = stripe.redirectToCheckout({
-    lineItems: [
-      {
-        price: 'price_1Ntr5GDRoA0SgYmiz2KWOa1l', // Replace with the ID of your price
-        quantity: 1,
-      },
-      {
-        price: 'price_1Ntr5TDRoA0SgYmiuxS7S6qp', // Replace with the ID of your price
-        quantity: 4,
-      },
-  ],
-    mode: 'payment',
-    billingAddressCollection: 'required',
-    shippingAddressCollection: {
-      allowedCountries: ["AC","AD","AE","AF","AG","AI","AL","AM","AO","AQ","AR","AT","AU","AW","AX","AZ","BA","BB","BD","BE","BF","BG","BH","BI","BJ","BL","BM","BN","BO","BQ","BR","BS","BT","BV","BW","BY","BZ","CA","CD","CF","CG","CH","CI","CK","CL","CM","CN","CO","CR","CV","CW","CY","CZ","DE","DJ","DK","DM","DO","DZ","EC","EE","EG","EH","ER","ES","ET","FI","FJ","FK","FO","FR","GA","GB","GD","GE","GF","GG","GH","GI","GL","GM","GN","GP","GQ","GR","GS","GT","GU","GW","GY","HK","HN","HR","HT","HU","ID","IE","IL","IM","IN","IO","IQ","IS","IT","JE","JM","JO","JP","KE","KG","KH","KI","KM","KN","KR","KW","KY","KZ","LA","LB","LC","LI","LK","LR","LS","LT","LU","LV","LY","MA","MC","MD","ME","MF","MG","MK","ML","MM","MN","MO","MQ","MR","MS","MT","MU","MV","MW","MX","MY","MZ","NA","NC","NE","NG","NI","NL","NO","NP","NR","NU","NZ","OM","PA","PE","PF","PG","PH","PK","PL","PM","PN","PR","PS","PT","PY","QA","RE","RO","RS","RU","RW","SA","SB","SC","SE","SG","SH","SI","SJ","SK","SL","SM","SN","SO","SR","SS","ST","SV","SX","SZ","TA","TC","TD","TF","TG","TH","TJ","TK","TL","TM","TN","TO","TR","TT","TV","TW","TZ","UA","UG","US","UY","UZ","VA","VC","VE","VG","VN","VU","WF","WS","XK","YE","YT","ZA","ZM","ZW","ZZ"]
-    },
-    successUrl: 'http://127.0.0.1:5500/success.html',
-    cancelUrl: 'http://127.0.0.1:5500/',
-  })
-})
-
-
-
-
-// RATINGS CAROUSEL
-
-new Flickity( '#ratings', {
-    // options
-    cellAlign: 'center',
-    wrapAround: true,
-    contain: true
-});
-
-*/
-
 
 // PARRALAX BACKGROUNDS
 
@@ -120,4 +55,54 @@ links.forEach(link => {
   link.addEventListener("click", e => {
     toggle.checked = false;
   })
+});
+
+// ESHOP
+
+document.querySelectorAll(".product").forEach(product => {
+  const amount = product.querySelector(".amount");
+
+  product.querySelector(".plus").addEventListener("click", e => {
+    if(amount.innerText - 0 < 20) {
+      amount.innerText = amount.innerText - 0 + 1;
+    }
+  })
+  product.querySelector(".minus").addEventListener("click", e => {
+    if(amount.innerText - 0 > 0) {
+      amount.innerText = amount.innerText - 1;
+    }
+  })
+
+
+});
+
+document.querySelector("#checkout").addEventListener("click", e => {
+  e.preventDefault();
+
+  let itemsOrdered = 0;
+  
+  const order = {};
+  document.querySelectorAll(".product").forEach(product => {
+    const amount = product.querySelector(".amount").innerText - 0;
+
+    itemsOrdered = itemsOrdered + (amount - 0);
+  
+    order[product.dataset.productid] = amount
+  });
+
+  const checkout_error = document.querySelector("#checkout_error");
+
+
+  if(itemsOrdered > 0) {
+    // Proceed
+    checkout_error.classList.add("hidden");
+    const url = `https://flare35.deno.dev/pay?50D=${order['50D']}&200T=${order['200T']}&250D=${order['250D']}&500T=${order['500T']}`;
+    window.location = url;
+
+  } else {
+    checkout_error.classList.remove("hidden");
+    checkout_error.innerText = "Cannot checkout an empty order";
+  }
+  console.log(order);
+  
 });
