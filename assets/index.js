@@ -1,4 +1,6 @@
 
+
+
 // PARRALAX BACKGROUNDS
 
 const parallax_down = document.getElementsByClassName('parallax_down');
